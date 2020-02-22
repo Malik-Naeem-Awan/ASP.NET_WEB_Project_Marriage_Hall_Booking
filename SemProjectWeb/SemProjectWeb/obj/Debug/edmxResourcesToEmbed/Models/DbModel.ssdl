@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Booking_Table">
+    <Key>
+      <PropertyRef Name="Booking_id" />
+    </Key>
+    <Property Name="Booking_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date_Of_Function" Type="date" Nullable="false" />
+    <Property Name="Type_Of_Function" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Function_Menue" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="No_Of_Guests" Type="int" Nullable="false" />
+    <Property Name="Vehicle_Parking_Space" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ProjWeb.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="UserEmail" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="ConfirmPassword" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConfirmPassword" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ProjWebModelStoreContainer">
+    <EntitySet Name="Booking_Table" EntityType="Self.Booking_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [User].[UserId] AS [UserId], 
+    [User].[UserName] AS [UserName], 
+    [User].[UserEmail] AS [UserEmail], 
+    [User].[Password] AS [Password], 
+    [User].[ConfirmPassword] AS [ConfirmPassword]
+    FROM [dbo].[User] AS [User]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebProjModelStoreContainer" CdmEntityContainer="DbModels">
+    <EntitySetMapping Name="BookingTables">
+      <EntityTypeMapping TypeName="WebProjModel.BookingTable">
+        <MappingFragment StoreEntitySet="BookingTable">
+          <ScalarProperty Name="Booking_id" ColumnName="Booking_id" />
+          <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+          <ScalarProperty Name="Date_Of_Function" ColumnName="Date_Of_Function" />
+          <ScalarProperty Name="Type_Of_Function" ColumnName="Type_Of_Function" />
+          <ScalarProperty Name="Function_Menue" ColumnName="Function_Menue" />
+          <ScalarProperty Name="No_Of_Guests" ColumnName="No_Of_Guests" />
+          <ScalarProperty Name="Vehicle_Parking_Space" ColumnName="Vehicle_Parking_Space" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="WebProjModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,157 @@
+﻿@model SemProjectWeb.Models.BookingTable
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hotel Template">
+    <meta name="keywords" content="Hotel, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>@ViewBag.Title Marriage Hall Booking</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Taviraj:300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap css Library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+    @Styles.Render("~/Content/css")
+
+
+
+</head>
+<body>
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="inner-header">
+                <div class="logo">
+                    <img src="~/img/text.png" alt="">
+                </div>
+                <div class="container" id="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <nav class="main-menu mobile-menu">
+                                <ul>
+                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                                    <li>
+                                        <a href="#">Facilities</a>
+                                        <ul class="drop-menu">
+                                            <li><a href="#">Marquee</a></li>
+                                            <li><a href="#">Wedding Hall</a></li>
+                                            <li><a href="#">Birthday Hall</a></li>
+                                            <li><a href="#">Confrence Hall</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>@Html.ActionLink("Gallery", "gallery", "Home")</li>
+                                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                    <li>@Html.ActionLink("SignUp/LogIn", "SignUp", "User")</li>
+                                </ul>
+                            </nav>
+                            <div class="top-info">
+                                <img src="~/img/placeholder.png" alt="">
+                                <span>Green Lagoon, Quaid Avenue, Wah, Pakistan <br />UET Taxila</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+        <hr />
+        <!-- Footer Section Begin -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-logo">
+                            <img src="~/img/logo1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row pb-50">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h5>Online Booking</h5>
+                            <div class="widget-text">
+                                <i class="lnr lnr-book"></i>
+
+                                <p>
+                                    <b>
+                                        @Html.ActionLink("Book Now!", "Registeration", "User")
+                                    </b>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h5>Reception</h5>
+                            <div class="widget-text">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <p>+92 336-5370648</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h5>Shuttle Service</h5>
+                            <div class="widget-text">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <p>+92 336-5370648</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h5>Restaurant</h5>
+                            <div class="widget-text">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <p>+92 336-5370648</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="copyright-text">
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved |  Template is licensed under Software
+                        Engineers UET Taxila-->
+                    </div>
+                    <div class="privacy-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Photo Requests</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Js Plugins -->
+    @Scripts.Render("~/bundles/javascript")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+</body>
+</html>

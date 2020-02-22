@@ -1,0 +1,101 @@
+﻿@model SemProjectWeb.Models.BookingTable
+
+@{
+    ViewBag.Title = "Booking";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+
+<section class="hero-section set-bg" style="background-color:black;" data-setbg="img/about-us-bg3.jpg">
+    <div class="hero-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Booking</h1>
+                </div>
+            </div>
+            <div class="page-nav">
+                <a href="./Contact" class="left-nav"><i class="lnr lnr-arrow-left"></i> Contact</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-section spad" style="margin-left:15%; margin-right: 15%">
+    <div class="container-fluid">
+        <div class="contact-form" style="background-image: url(img/102.jfif); background-color:blueviolet; background-size: cover">
+            <h5 style="color: white; text-align:center;">Wedding Hall Booking Form</h5>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.User_Email, new { htmlAttributes = new { @class = "form-control" ,
+                       placeholder = "EMAIL"
+                   } })
+                            @Html.ValidationMessageFor(model => model.User_Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Date_Of_Function, new { htmlAttributes = new { @class = "form-control",
+                       placeholder = "DATE OF FUNCTION"
+                   } })
+                            @Html.ValidationMessageFor(model => model.Date_Of_Function, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Type_Of_Function, new { htmlAttributes = new { @class = "form-control",
+                       placeholder = "TYPE OF FUNCTION(WALIMA/BARAT/MEHNDI)"
+                   } })
+                            @Html.ValidationMessageFor(model => model.Type_Of_Function, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Function_Menue, new { htmlAttributes = new { @class = "form-control",
+                       placeholder = "FUNCTION MENUE(MENUE1/MENUE2)"
+                   } })
+                            @Html.ValidationMessageFor(model => model.Function_Menue, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.No_Of_Guests, new { htmlAttributes = new { @class = "form-control",
+                       placeholder = "NUMBER OF GUESTS(500/1000/2000)"
+                   } })
+                            @Html.ValidationMessageFor(model => model.No_Of_Guests, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Vehicle_Parking_Space, new { htmlAttributes = new { @class = "form-control",
+                       placeholder = "VEHICLE PARKING SPACE(50/100/200)"
+                   } })
+                            @Html.ValidationMessageFor(model => model.Vehicle_Parking_Space, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="container-login100-form-btn form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="login100-form-btn" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+

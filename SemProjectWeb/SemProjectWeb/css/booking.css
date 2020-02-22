@@ -1,0 +1,24 @@
+﻿
+
+@media only screen and (max-width: 767px) {
+    .contact-form h1{ 
+        font-size: 20px; 
+    }
+    .contact-form h2 {
+        font-size: 18px;
+    }
+    .contact-form h3 {
+        font-size: 16px;
+    }
+    .contact-form h4 {
+        font-size: 14px;
+    }
+    .contact-form h4 {
+        font-size: 13px;
+    }
+    .contact-form button {
+        font-size: 18px;
+        text-align:center;
+
+    }
+}

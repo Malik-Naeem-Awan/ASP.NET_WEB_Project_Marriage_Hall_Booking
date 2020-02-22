@@ -1,0 +1,130 @@
+﻿@model SemProjectWeb.Models.User
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Home/null_layout.cshtml";
+}
+
+<div class="main" style="background-color:blueviolet;">
+
+    <section class="signup">
+        <!--<img src="images/signup-bg.jpg" alt=""> -->
+        <div class="container">
+            <div class="signup-content">
+
+                @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <h2 class="form-title">Create account</h2>
+                    <div id="signup-form" class="signup-form">
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.UserName, htmlAttributes: new
+                            {
+                                @class = "control-label col-md-2",
+                                id = "name",
+                                placeholder = "Your Name"
+                            })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.UserName, new
+                                {
+                                    htmlAttributes = new
+                                    {
+                                        @class = "form-input",
+                                        id = "name",
+                                        placeholder = "Your Name"
+                                    }
+                                })
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.UserEmail, htmlAttributes: new
+                            {
+                                @class = "control-label col-md-2",
+                                id = "email",
+                                placeholder = "Your Email"
+                            })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.UserEmail, new
+                                {
+                                    htmlAttributes = new
+                                    {
+                                        @class = "form-input",
+                                        id = "email",
+                                        placeholder = "Your Email"
+                                    }
+                                })
+                                @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new{ 
+                           @class = "control-label col-md-2",
+                           id = "password",
+                           placeholder = "Password"
+                       })
+
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Password, new
+                                {
+                                    htmlAttributes = new
+                                    {
+                                        @class = "form-input",
+                                id = "password",
+                                placeholder = "Password"
+                            }
+                                })
+                                <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new
+                            {
+                                @class = "control-label col-md-2",
+                                id = "re_password",
+                                placeholder = "Repeat your password"
+                            })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ConfirmPassword, new
+                                {
+                                    htmlAttributes = new
+                                    {
+                                        @class = "form-input",
+                                id = "re_password",
+                                placeholder = "Repeat your password"
+                            }
+                                })
+                                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up" />
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <label class="label-success">@ViewBag.SuccessMessage</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <label class="label-danger">@ViewBag.DuplicateMessage</label>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+                <p class="loginhere">
+                    Have already an account ? <a class="loginhere-link">@Html.ActionLink("Login Here", "Login", "User")</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+

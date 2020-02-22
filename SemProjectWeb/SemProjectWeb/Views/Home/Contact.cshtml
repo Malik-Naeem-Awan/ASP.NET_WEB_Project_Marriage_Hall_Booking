@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+
+}
+<!-- Header Section Begin -->
+<!-- Header End -->
+<!-- Hero Section Begin -->
+<section class="hero-section set-bg" data-setbg="img/about-us-bg3.jpg" style="background-image: url(about-us-bg3.jpg);
+                background-color: black;">
+    <div class="hero-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Contact</h1>
+                </div>
+            </div>
+            <div class="page-nav">
+                <a href="./gallery" class="left-nav"><i class="lnr lnr-arrow-left"></i> Gallary</a>
+                <a href="./booking" class="right-nav">Booking Onine <i class="lnr lnr-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+<!-- Contact Section Begin -->
+<section class="contact-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="contact-left">
+                    <div class="contact-information">
+                        <h2>Contact Information</h2>
+                        <ul>
+                            <li>
+                                <img src="~/img/placeholder-copy.png" alt="">
+                                <span>Green Lagoon, Quaid Avenue, Wah, Pakistan <br />UET Taxila</span>
+                            </li>
+
+
+                            <li><img src="~/img/phone-copy.png" alt=""> <span>+92 (336) 5370648</span></li>
+                            <li><img src="~/img/envelop.png" alt=""> <span>maliknaeemurrehman81@gmail.com</span></li>
+                            <li><img src="~/img/clock-copy.png" alt=""> <span> 09:00 AM - 05:00 PM</span></li>
+                        </ul>
+                    </div>
+                    <div class="social-links">
+                        <h2>Follow us on:</h2>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contact-form">
+                    <h5>Write us ...</h5>
+                    <form action="#" onsubmit="return validation()">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Full Name" class="bg-light" name="user"
+                                           class="form-control" id="user" autocomplete="off">
+                                    <span style="margin-top: 10px;" id="username" class="text-danger font-weight-bold"> </span>
+                                    <img src="~/img/edit.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <input type="email" placeholder="Email" name="email"
+                                           class="form-control" id="emails" autocomplete="off">
+                                    <img src="~/img/envelop-copy.png" alt="">
+                                    <span style="margin-top: 10px;" id="emailids" class="text-danger font-weight-bold"> </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="input-group phone-num">
+                                    <input type="text" placeholder="Phone" name="mobile"
+                                           class="form-control" id="mobileNumber" autocomplete="off">
+                                    <span style="margin-top: 10px;" id="mobileno" class="text-danger font-weight-bold"> </span>
+                                    <img src="~/img/phone-copy.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="message">
+                                    <p>Message</p>
+                                    <div class="textarea">
+                                        <textarea placeholder="Hi ..." id="messageArea" name="message" autocomplete="off"></textarea>
+                                        <img src="~/img/speech-copy.png" alt="">
+                                        <span style="margin-top: 30px;" id="message" class="text-danger font-weight-bold"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <button type="submit">Send <i class="lnr lnr-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- Contact Section End -->
+<!-- Map Section Begin -->
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13262.280140962741!2d72.7119903!3d33.7975998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x48fa686b737eddbd!2sGreen%20Lagoon!5e0!3m2!1sen!2s!4v1571560836491!5m2!1sen!2s"
+            height="560" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+<!-- Map Section End -->
+
+<script type="text/javascript">
+
+
+    function validation() {
+
+        var user = document.getElementById('user').value;
+        var mobileNumber = document.getElementById('mobileNumber').value;
+        var emails = document.getElementById('emails').value;
+        var message = document.getElementById('messageArea').value;
+
+        if (user == "") {
+            document.getElementById('username').innerHTML = " ** Please fill the username field";
+            document.getElementById('emailids').innerHTML = "";
+            document.getElementById('mobileno').innerHTML = "";
+            return false;
+        }
+        if ((user.length <= 2) || (user.length > 20)) {
+            document.getElementById('username').innerHTML = " ** Username lenght must be between 2 and 20";
+            document.getElementById('emailids').innerHTML = "";
+            document.getElementById('mobileno').innerHTML = "";
+            return false;
+        }
+        if (!isNaN(user)) {
+            document.getElementById('username').innerHTML = " ** only characters are allowed";
+            document.getElementById('emailids').innerHTML = "";
+            document.getElementById('mobileno').innerHTML = "";
+            return false;
+        }
+
+        if (emails == "") {
+            document.getElementById('emailids').innerHTML = " ** Please fill the email id field";
+            document.getElementById('mobileno').innerHTML = "";
+            document.getElementById('username').innerHTML = "";
+            return false;
+        }
+
+        if ((emails.charAt(emails.length - 4) != '.') && (emails.charAt(emails.length - 3) != '.')) {
+            document.getElementById('emailids').innerHTML = " ** . Invalid Position";
+            document.getElementById('mobileno').innerHTML = "";
+            document.getElementById('username').innerHTML = "";
+            return false;
+        }
+
+        if (mobileNumber == "") {
+            document.getElementById('mobileno').innerHTML = " ** mobile Number field is empty";
+            document.getElementById('username').innerHTML = "";
+            document.getElementById('emailids').innerHTML = "";
+            return false;
+        }
+        if (isNaN(mobileNumber)) {
+            document.getElementById('mobileno').innerHTML = " ** user must write digits only not characters";
+            document.getElementById('username').innerHTML = "";
+            document.getElementById('emailids').innerHTML = "";
+            return false;
+        }
+        if (mobileNumber.length != 10) {
+            document.getElementById('mobileno').innerHTML = " ** Mobile Number must be 10 digits only";
+            document.getElementById('username').innerHTML = "";
+            document.getElementById('emailids').innerHTML = "";
+            return false;
+        }
+        if (message == "") {
+            document.getElementById('username').innerHTML = "";
+            document.getElementById('emailids').innerHTML = "";
+            document.getElementById('mobileno').innerHTML = "";
+            document.getElementById('message').innerHTML = "Please Write something for us!";
+            return false;
+        }
+        if (message.length >= 1) {
+            document.getElementById('mobileno').innerHTML = "";
+            document.getElementById('username').innerHTML = "";
+            document.getElementById('emailids').innerHTML = "";
+            document.getElementById('message').innerHTML = "";
+            return true;
+        }
+    }
+</script>
+
+
+

@@ -22,7 +22,7 @@ Its main concept is the Full stack Responsive and Interactive Website in .NET Co
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people:
+Thanks goes to Usama for contributing to this project!
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
